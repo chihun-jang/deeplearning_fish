@@ -34,6 +34,7 @@ plt.title("sin & cos")
 plt.legend()  # 라벨을 입력한 표지판(?)을 보여주는 부분
 plt.show()  # 그래프를 보여주는 부분
 
+# 이미지파일 보여주기
 # img = imread('img.png')
 # plt.imshow(img)
 # plt.show()
