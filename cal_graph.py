@@ -160,6 +160,7 @@ class SoftmaxWithLoss:
     def backward(self, dout=1):
         batch_size = self.t.shape[0]
 
+        # 역전파로 전파하는 값을 배치의 수로 나눠 data1개당 오차를 앞으로 전파
         dx = (self.y - self.t) / batch_size
 
         return dx
