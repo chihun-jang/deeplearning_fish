@@ -208,3 +208,8 @@ dW = real_num_grad(f, net.W)
 print(dW)
 
 # 이러한 기울기를 보면 각 W에서의 중요도 및 양으로 움직일때 손실함수가 증가하는지 감소하는지 확인 할 수 있다.
+
+# def f(W):  # 직접적으로 W를 받고있지는 않지만 같은 instance의 W를 사용해서 내부적으로 메서드작업을 해주고있다..
+#     return net.loss(x, t)
+# #위의 함수는 아래와 같이 람다함수로도 구현한다.
+# f = lambda w: net.loss(x,t)
