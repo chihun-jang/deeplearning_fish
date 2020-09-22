@@ -1,6 +1,4 @@
 # coding: utf-8
-import numpy as np
-import pickle
 import sys
 import os
 sys.path.append('..')
@@ -8,18 +6,20 @@ try:
     import urllib.request
 except ImportError:
     raise ImportError('Use Python3!')
+import pickle
+import numpy as np
 
 
 url_base = 'https://raw.githubusercontent.com/tomsercu/lstm/master/data/'
 key_file = {
-    'train': 'ptb.train.txt',
-    'test': 'ptb.test.txt',
-    'valid': 'ptb.valid.txt'
+    'train':'ptb.train.txt',
+    'test':'ptb.test.txt',
+    'valid':'ptb.valid.txt'
 }
 save_file = {
-    'train': 'ptb.train.npy',
-    'test': 'ptb.test.npy',
-    'valid': 'ptb.valid.npy'
+    'train':'ptb.train.npy',
+    'test':'ptb.test.npy',
+    'valid':'ptb.valid.npy'
 }
 vocab_file = 'ptb.vocab.pkl'
 
@@ -78,8 +78,7 @@ def load_data(data_type='train'):
         :param data_type: 데이터 유형: 'train' or 'test' or 'valid (val)'
         :return:
     '''
-    if data_type == 'val':
-        data_type = 'valid'
+    if data_type == 'val': data_type = 'valid'
     save_path = dataset_dir + '/' + save_file[data_type]
 
     word_to_id, id_to_word = load_vocab()
